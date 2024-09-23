@@ -1,10 +1,11 @@
 import './App.css'
+import { Login } from './pages/Login'
 
 function App() {
   return (
-    <h1 className='text-3xl font-bold underline'>
-      Panel de control de Sensores - Stark Industries
-    </h1>
+    <div className='w-screen h-screen p-0 m-0'>
+      <Login />
+    </div>
   )
 }
 
