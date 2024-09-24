@@ -28,7 +28,7 @@ export function Login({ setIsAuthenticated }: LoginProps) {
     <div className='w-full h-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]'>
       <div className='hidden lg:block mt-auto mb-auto ml-36'>
         <img
-          src='../../public/stark_industries_logo.jpg'
+          src='../../logo.jpg'
           alt='Image'
           className='w-full object-cover dark:brightness-[0.2] dark:grayscale'
         />
