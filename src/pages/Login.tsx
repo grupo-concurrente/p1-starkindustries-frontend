@@ -17,7 +17,7 @@ export function Login({ setIsAuthenticated }: LoginProps) {
     e.preventDefault()
 
     // Validación de login mock (puedes reemplazar esto con autenticación real más adelante)
-    if (email === 'tonystark@starkindustries.com' && password === 'tonystark') {
+    if (email === 'admin@admin' && password === 'admin') {
       setIsAuthenticated(true) // Simulamos autenticación exitosa
     } else {
       alert('Credenciales incorrectas')
