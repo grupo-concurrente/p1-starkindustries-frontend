@@ -33,44 +33,12 @@ El frontend es una **Single Page Application (SPA)** que interactúa con el back
 
 ## 🚀 Instalación y Ejecución
 
-1. **Clonar el repositorio**:  
-git clone https://github.com/stark-industries/security-system-frontend.git  
-cd security-system-frontend  
+La manera recomendable para levantar toda la aplicación esta definida en las instrucciones situadas en el README del repositorio principal (servidor backend) al que ae puede acceder aquí: https://github.com/grupo-concurrente/p1-starkindustries-backend
 
-2. **Instalar dependencias**:  
-npm install  
+Sin embargo, el servidor frontend también se puede levantar localmente realizando los siguientes pasos:
 
-3. **Configurar las variables de entorno**:  
-- Crea un archivo `.env` en la raíz del proyecto y añade la URL del backend:  
-REACT_APP_BACKEND_URL=http://localhost:8080  
+- Clonar el repositorio
+- Instalar las dependencias con 'npm install'
+- Levantar el servidor con 'npm run dev'
 
-4. **Ejecutar la aplicación**:  
-npm start  
-
-## 📦 Dependencias
-
-- **React** - Interfaz de usuario  
-- **Axios** - Para llamadas HTTP al backend  
-- **Socket.io-client** - Para WebSockets  
-- **React Router** - Navegación entre vistas  
-
-## 🛡️ Seguridad
-
-El frontend utiliza **JWT** (JSON Web Token) para la autenticación. El token se almacena en **LocalStorage** y se incluye en las cabeceras de cada petición que requiere autenticación.
-
----
-
-## 🛠️ Tecnologías Utilizadas
-
-- **React**  
-- **WebSockets**  
-- **Axios**  
-- **JWT**  
-
-## 📧 Contacto
-
-Si tienes alguna duda o sugerencia sobre el proyecto, no dudes en contactarnos en soporte@starkindustries.com.
-
----
-
-¡Gracias por contribuir a mantener la seguridad en Stark Industries!
+También se dispone de un Dockerfile para compilar la imagen aunque esencialmente realiza los mismos pasos definidos arriba pero en el entorno virtual de Docker
