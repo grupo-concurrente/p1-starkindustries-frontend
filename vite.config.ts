@@ -9,4 +9,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    host: '0.0.0.0',  // Asegúrate de que escuche en todas las interfaces
+    port: 5173,        // Usa el mismo puerto que expones en Docker
+  },
 })
