@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { authenticateUser } from '@/lib/utils'
 import { useState } from 'react'
 
 export interface LoginProps {
@@ -12,18 +13,28 @@ export interface LoginProps {
 export function Login({ setIsAuthenticated }: LoginProps) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [loginMessage, setLogginMessage] = useState('')
+  const [loginStatus, setLogginStatus] = useState(false)
 
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // Validación de login mock (puedes reemplazar esto con autenticación real más adelante)
-    if (email === 'admin@admin' && password === 'admin') {
-      setIsAuthenticated(true) // Simulamos autenticación exitosa
+    // Llamamos a la función de autenticación
+    const { status, info } = await authenticateUser(email, password)
+
+    setLogginStatus(status)
+    setLogginMessage(' ')
+    setTimeout(() => setLogginMessage(info), 50)
+    if (status) {
+      localStorage.setItem(
+        'session_credentials',
+        JSON.stringify({ email, password })
+      )
+      setTimeout(() => setIsAuthenticated(status), 700)
     } else {
-      alert('Credenciales incorrectas')
+      setIsAuthenticated(false)
     }
   }
-
   return (
     <div className='w-full h-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]'>
       <div className='hidden lg:block mt-auto mb-auto ml-36'>
@@ -66,6 +77,15 @@ export function Login({ setIsAuthenticated }: LoginProps) {
                 required
               />
             </div>
+            {loginMessage && (
+              <p
+                className={`text-balance ${
+                  loginStatus ? 'text-green-500' : 'text-rose-500'
+                }`}
+              >
+                {loginMessage}
+              </p>
+            )}
             <Button type='submit' className='w-full bg-gray-800'>
               Login
             </Button>

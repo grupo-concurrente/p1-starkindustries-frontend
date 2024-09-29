@@ -29,7 +29,7 @@ export default function Dashboard({ setIsAuthenticated }: LoginProps) {
     }
 
     fetchDataAsync()
-    const interval = setInterval(fetchDataAsync, 1000)
+    const interval = setInterval(fetchDataAsync, 5000)
     return () => clearInterval(interval)
   }, [])
 

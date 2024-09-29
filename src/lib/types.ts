@@ -29,3 +29,8 @@ export enum TIPO_SENSOR {
   MOVIMIENTO = 'MOVIMIENTO',
   ACCESO = 'ACCESO',
 }
+
+export interface AuthResponse {
+  status: boolean
+  info: string
+}
