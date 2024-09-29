@@ -33,12 +33,10 @@ El frontend es una **Single Page Application (SPA)** que interactúa con el back
 
 ## 🚀 Instalación y Ejecución
 
-La manera recomendable para levantar toda la aplicación esta definida en las instrucciones situadas en el README del repositorio principal (servidor backend) al que ae puede acceder aquí: https://github.com/grupo-concurrente/p1-starkindustries-backend
+En este momento el frontend se puede ejecutar independiente pero no existen datos de mock para visualizar la UI sin necesidad de estar conectado al backend.
 
-Sin embargo, el servidor frontend también se puede levantar localmente realizando los siguientes pasos:
+Actualmente es necesario tener los servicios de **BBDD y Backend** levantados para que el frontend los consuma y funcione correctamente.
 
-- Clonar el repositorio
-- Instalar las dependencias con 'npm install'
-- Levantar el servidor con 'npm run dev'
+Las instrucciones en detalle para ello están en el README.md del repositorio principal (Backend)
 
-También se dispone de un Dockerfile para compilar la imagen aunque esencialmente realiza los mismos pasos definidos arriba pero en el entorno virtual de Docker
+https://github.com/grupo-concurrente/p1-starkindustries-backend
